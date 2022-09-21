@@ -1,0 +1,2 @@
+curl -X GET "https://www.ecfr.gov/api/search/v1/results?query=%C2%A7%20200.302%20Financial%20management&per_page=10&page=1&order=relevance" -H "accept: application/JSON"
+

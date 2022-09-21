@@ -1,0 +1,76 @@
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT License. -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Office JavaScript API -->
+    <meta name="description" content="This is a app for office which can search what you want in the eCFR."/>
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript"/>
+    <meta charset="UTF-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <title>eCFR Browser</title>
+    <!-- <link href="styles/oxgagavestyle.css" rel="stylesheet" type="text/css" /> -->
+    <link href="styles/app.css" rel="stylesheet" type="text/css" />
+    <!-- <link href="styles/oxgnavigationstyle.css" rel="stylesheet" type="text/css" /> -->
+    <!-- <script src="//appsforoffice.microsoft.com/lib/1.0/hosted/office.js"></script> -->
+    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+    <!--
+     NOTICE:  Third party scripts and code linked to or referenced here are licensed to you by
+     the third parties that own such code, not by Microsoft, see ASP.NET Ajax CDN Terms of Use –
+     http://www.asp.net/ajaxlibrary/CDN.ashx
+    -->
+    <!-- <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.js"></script> -->
+    <!-- <script src="scripts/en-us/strings.js"></script> -->
+    <!-- <script src="scripts/wikipedia_dev.js"></script> -->
+    <noscript></noscript>
+</head>
+
+<body>
+    <p>This add-in will insert the text 'Hello world!'.</p>
+    <button id="helloButton">Say hello</button>
+</br>
+</br>
+            <div id="eCFR_Frame">
+                <iframe src="https://www.ecfr.gov/" height= 100% width= 100% title="eCFR"></iframe>
+            </div>
+            <div> 
+                <object type="" data="https://www.ecfr.gov/" width= 100% height= 100% style="overflow:auto;border:5px ridge blue">
+                </object>
+             </div>
+
+
+
+
+
+
+
+
+
+            <!-- the insert text overlay -->
+            <div id="textInsert">
+                <img src="assets/insettodoc_24x.png" />
+            </div>
+</body>
+
+<script>
+    Office.onReady((info) => {
+        // Check that we loaded into Word
+        if (info.host === Office.HostType.Word) {
+            document.getElementById("helloButton").onclick = sayHello;
+            // document.getElementById("helloButton").onclick = print(sayHello);
+        }
+    });
+
+    function sayHello() {
+        return Word.run((context) => {
+
+            // insert a paragraph at the start of the document.
+            const paragraph = context.document.body.insertParagraph("Hello World_Custom", Word.InsertLocation.start);
+            
+            // sync the context to run the previous API call, and return.
+            return context.sync();
+        });
+    }
+</script>
+
+</html>

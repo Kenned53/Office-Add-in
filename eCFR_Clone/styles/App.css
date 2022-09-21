@@ -1,0 +1,46 @@
+/* Styles the insert image bar icon */
+.ms_osf_insertButton_icon {
+    width:25px;
+    height:25px;	
+    margin:0 auto;
+    padding: 3px 0 0 3px;
+}
+
+.ms_osf_insertImageLoading {
+    position:absolute;
+    background-color: rgba(240,240,240,0.8);
+    background-image:url("../images/loading.gif");
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+/* The little text insertion button that shows up when you highlight text */
+#textInsert {
+    display: none;
+    position:absolute;
+    width: 25px;
+    height: 25px;
+    z-index:10; /* Just needs to be higher than everything else */
+}
+/* The box where all the article content goes */
+#ms_osf_content {
+    position:absolute;
+    left:0;
+    top:165px;
+    overflow-y: auto;
+    overflow-x: auto;
+    right:0;
+    bottom:auto;
+    word-wrap: break-word;
+    text-align: justify;
+    text-align-last: left;
+    padding:0;
+    color:#363636;
+}
+/* Takes care of making the scroll bar look nice */
+body {  
+    padding: 0;
+    padding-left: 5px;
+    margin: 0;
+    font-size:12px;
+    line-height:1.4em;
+}
