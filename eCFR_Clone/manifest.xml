@@ -14,7 +14,6 @@
   <SupportUrl DefaultValue="https://docs.microsoft.com/office/dev/add-ins/overview/office-add-in-code-samples"/>
   <AppDomains>
     <AppDomain>https://Kenned53.github.io/Office-Add-in/eCFR_Clone</AppDomain>
-    <!-- <AppDomain>https://www.ecfr.gov</AppDomain> -->
   </AppDomains>
   <Hosts>
     <Host Name="Document"/>
